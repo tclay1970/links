@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Links</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #0f172a;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 380px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    h1 {
+        margin: 20px 0 5px;
+        font-size: 24px;
+    }
+
+    .bio {
+        font-size: 14px;
+        color: #cbd5e1;
+        margin-bottom: 25px;
+    }
+
+    .link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        text-decoration: none;
+        margin: 10px 0;
+        padding: 14px;
+        border-radius: 12px;
+        font-weight: bold;
+        font-size: 15px;
+
+        /* Animation setup */
+        transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.2s;
+        box-shadow: 0 6px 0 rgba(0,0,0,0.25);
+    }
+
+    /* Hover (desktop) */
+    .link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 14px rgba(0,0,0,0.35);
+        opacity: 0.95;
+    }
+
+    /* Active (tap/click) */
+    .link:active {
+        transform: translateY(3px) scale(0.97);
+        box-shadow: 0 2px 0 rgba(0,0,0,0.3);
+    }
+
+    /* Branding */
+
+    .instagram {
+        background: linear-gradient(45deg, #feda75, #d62976, #962fbf, #4f5bd5);
+        color: white;
+    }
+
+    .snapchat {
+        background: #FFFC00;
+        color: black;
+    }
+
+    .cashapp {
+        background: #00C244;
+        color: white;
+    }
+
+    .venmo {
+        background: #3D95CE;
+        color: white;
+    }
+
+    .phone {
+        background: #334155;
+        color: white;
+    }
+
+    .link i {
+        font-size: 18px;
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Nic Clayton</h1>
+    <div class="bio">Sorry, no OnlyFans :(</div>
+
+    <a class="link phone" href="tel:9192009703">
+        <i class="fas fa-phone"></i> (919) 200-9703
+    </a>
+
+    <a class="link instagram" href="https://instagram.com/tclay1970" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+    </a>
+
+    <a class="link snapchat" href="https://snapchat.com/add/tclay1970" target="_blank">
+        <i class="fab fa-snapchat-ghost"></i> Snapchat
+    </a>
+
+    <a class="link cashapp" href="https://cash.app/$tclayUSAE" target="_blank">
+        <i class="fas fa-dollar-sign"></i> Cash App
+    </a>
+
+    <a class="link venmo" href="https://venmo.com/code?user_id=3271490984214528126&" target="_blank">
+        <i class="fas fa-wallet"></i> Venmo
+    </a>
+
+</div>
+
+</body>
+</html>
