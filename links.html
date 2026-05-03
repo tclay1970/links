@@ -48,26 +48,20 @@
         border-radius: 12px;
         font-weight: bold;
         font-size: 15px;
-
-        /* Animation setup */
         transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.2s;
         box-shadow: 0 6px 0 rgba(0,0,0,0.25);
     }
 
-    /* Hover (desktop) */
     .link:hover {
         transform: translateY(-2px);
         box-shadow: 0 8px 14px rgba(0,0,0,0.35);
         opacity: 0.95;
     }
 
-    /* Active (tap/click) */
     .link:active {
         transform: translateY(3px) scale(0.97);
         box-shadow: 0 2px 0 rgba(0,0,0,0.3);
     }
-
-    /* Branding */
 
     .instagram {
         background: linear-gradient(45deg, #feda75, #d62976, #962fbf, #4f5bd5);
@@ -98,6 +92,26 @@
         font-size: 18px;
     }
 
+    /* Toast notification */
+    .toast {
+        position: fixed;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%) translateY(20px);
+        background: rgba(0,0,0,0.8);
+        color: white;
+        padding: 10px 16px;
+        border-radius: 8px;
+        opacity: 0;
+        transition: 0.3s;
+        font-size: 14px;
+    }
+
+    .toast.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+
 </style>
 </head>
 
@@ -106,7 +120,7 @@
 <div class="container">
 
     <h1>Nic Clayton</h1>
-    <div class="bio">Sorry, no OnlyFans :(</div>
+    <div class="bio">Sorry, No OnlyFans :(</div>
 
     <a class="link phone" href="tel:9192009703">
         <i class="fas fa-phone"></i> (919) 200-9703
@@ -124,11 +138,37 @@
         <i class="fas fa-dollar-sign"></i> Cash App
     </a>
 
-    <a class="link venmo" href="https://venmo.com/code?user_id=3271490984214528126&" target="_blank">
+    <a class="link venmo" href="https://venmo.com/code?user_id=3271490984214528126&created=1777767023" target="_blank" onclick="handleVenmoClick(event)">
         <i class="fas fa-wallet"></i> Venmo
     </a>
 
 </div>
+
+<div id="toast" class="toast">Copied last 4 digits!</div>
+
+<script>
+function handleVenmoClick(event) {
+    const lastFour = "9703"; // <-- CHANGE THIS
+
+    // Copy to clipboard
+    navigator.clipboard.writeText(lastFour).then(() => {
+        showToast();
+    }).catch(err => {
+        console.error("Copy failed", err);
+    });
+
+    // Let link continue to open
+}
+
+function showToast() {
+    const toast = document.getElementById("toast");
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 2000);
+}
+</script>
 
 </body>
 </html>
